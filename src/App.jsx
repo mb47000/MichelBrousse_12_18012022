@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Parameter from './pages/Parameter'
 import Profil from './pages/Profil'
 import Header from './components/Header'
+import GlobalStyle from './styles/GlobalStyle'
 import SideBar from './components/SideBar'
 import GlobalStyle from './styles/GlobalStyle'
 
