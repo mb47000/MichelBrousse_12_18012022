@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Parameter from './pages/Parameter'
 import Profil from './pages/Profil'
 import Header from './components/Header'
+import SideBar from './components/SideBar'
 import GlobalStyle from './styles/GlobalStyle'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <Fragment>
       <GlobalStyle />
       <Header />
+      <SideBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="profil" element={<Profil />} />

@@ -10,6 +10,13 @@ const GlobalStyle = createGlobalStyle`
 #root {
   margin: auto;
   max-width: 1440px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#root>div:last-child {
+	flex-grow: 1;
+	margin: 91px 0 0 117px;
 }
 `
 

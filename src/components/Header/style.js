@@ -6,6 +6,10 @@ export const StyledHeader = styled.header`
   background: ${colors.primary};
 	display: flex;
 	box-shadow: 0px 4px 4px 0px #00000040;
+  width: 100%;
+  position: fixed;
+  max-width: inherit;
+  z-index: 1;
 `
 
 export const StyledLogo = styled(Logo)`
