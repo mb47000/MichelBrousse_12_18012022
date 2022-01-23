@@ -1,9 +1,3 @@
-import React from 'react'
-
-class Error extends React.Component {
-  render() {
-    return <main>404</main>
-  }
-}
+const Error = () => <h1>404</h1>
 
 export default Error

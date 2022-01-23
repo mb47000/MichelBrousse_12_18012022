@@ -1,5 +1,5 @@
 const Parameter = () => {
-  return <div>Réglage</div>
+  return <h1>Réglage</h1>
 }
 
 export default Parameter

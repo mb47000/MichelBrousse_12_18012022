@@ -8,7 +8,6 @@ import Profil from './pages/Profil'
 import Header from './components/Header'
 import GlobalStyle from './styles/GlobalStyle'
 import SideBar from './components/SideBar'
-import GlobalStyle from './styles/GlobalStyle'
 
 function App() {
   return (
@@ -16,13 +15,15 @@ function App() {
       <GlobalStyle />
       <Header />
       <SideBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="profil" element={<Profil />} />
-        <Route path="parameter" element={<Parameter />} />
-        <Route path="community" element={<Community />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="profil" element={<Profil />} />
+          <Route path="parameter" element={<Parameter />} />
+          <Route path="community" element={<Community />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </main>
     </Fragment>
   )
 }
