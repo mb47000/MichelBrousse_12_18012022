@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   flex-wrap: wrap;
 }
 
-#root>div:last-child {
+main {
 	flex-grow: 1;
 	margin: 91px 0 0 117px;
 }

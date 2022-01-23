@@ -1,7 +1,14 @@
 import { useLocation } from 'react-router-dom'
 import { StyledSideBar, StyledCopyright } from './style'
-import { ProfilNavigation } from '../VerticalNav'
+import { ProfilNavigation } from '../ProfilNavigation'
 
+/**
+ * SideBar component
+ * @author Michel Brousse
+ * @component
+ * @example
+ * <SideBar />
+ */
 const SideBar = () => {
   const location = useLocation()
 

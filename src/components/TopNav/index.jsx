@@ -1,9 +1,10 @@
 import { StyledList, StyledLink, StyledNav } from './style'
 /**
  * Top nav component.
- *
+ * @author Michel Brousse
  * @component
- *
+ * @example
+ * <TopNav />
  */
 const TopNav = () => {
   return (

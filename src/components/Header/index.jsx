@@ -2,10 +2,11 @@ import TopNav from '../TopNav'
 import { StyledHeader, StyledLogo } from './style'
 
 /**
- * Header component.
- *
+ * Header component
+ * @author Michel Brousse
  * @component
- *
+ * @example
+ * return (<Header data={headerData} />)
  */
 const Header = () => {
   return (
