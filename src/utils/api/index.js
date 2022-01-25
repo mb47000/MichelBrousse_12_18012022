@@ -19,6 +19,7 @@
  */
 export async function fetchWithState(url, setDataState, setLoadingState, setErrorState) {
     try {
+        setLoadingState(true)
         const response = await fetch(url)
         const data = await response.json()
         setDataState(data)
