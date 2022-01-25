@@ -28,7 +28,6 @@ export function useGetUser() {
   const url = `${apiUrl}/${userId}`
 
   useEffect(() => {
-    setLoading(true)
     fetchWithState(url, setData, setLoading, setError)
   }, [userId])
 
@@ -59,7 +58,6 @@ export function useGetActivity() {
   const url = `${apiUrl}/${userId}/activity`
 
   useEffect(() => {
-    setLoading(true)
     fetchWithState(url, setData, setLoading, setError)
   }, [userId])
 
@@ -94,7 +92,6 @@ export function useGetAverageSession() {
   const url = `${apiUrl}/${userId}/average-sessions`
 
   useEffect(() => {
-    setLoading(true)
     fetchWithState(url, setData, setLoading, setError)
   }, [userId])
 
@@ -125,7 +122,6 @@ export function useGetTodayScore() {
   const url = `${apiUrl}/${userId}/today-score`
 
   useEffect(() => {
-    setLoading(true)
     fetchWithState(url, setData, setLoading, setError)
   }, [userId])
 
@@ -156,7 +152,6 @@ export function useGetActivitiesType() {
   const url = `${apiUrl}/${userId}/activities`
 
   useEffect(() => {
-    setLoading(true)
     fetchWithState(url, setData, setLoading, setError)
   }, [userId])
 
@@ -191,7 +186,6 @@ export function useGetKeyData() {
   const url = `${apiUrl}/${userId}/key-data`
 
   useEffect(() => {
-    setLoading(true)
     fetchWithState(url, setData, setLoading, setError)
   }, [userId])
 
