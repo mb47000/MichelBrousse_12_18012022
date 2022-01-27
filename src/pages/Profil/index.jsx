@@ -1,26 +1,30 @@
-import { useGetUser } from '../../utils/hooks'
-import { Loader, LoaderWrapper } from '../../styles'
+import { useFetchApi } from '../../utils/hooks'
+import { StyledProfile } from './style'
+import HelloUser from '../../components/HelloUser'
+import { Loader } from '../../styles'
 
 const Profil = () => {
-  const { userData, userLoading, userError } = useGetUser()
+  console.log('render')
+  const {
+    data: userData,
+    isLoading: userLoading,
+    isError: userError,
+  } = useFetchApi()
 
-  if (userError)
-    return (
-      <div>Une erreur est survenue pendant la récupération des données</div>
-    )
+  return (
+    <StyledProfile>
+      {userError ? (
+        <div>Erreur pendant la récuperation des données</div>
+      ) : userLoading ? (
+        <Loader />
+      ) : (
+        <HelloUser userFirstName={userData.data.userInfos.firstName} />
+      )}
 
-  return userLoading ? (
-    <LoaderWrapper>
-      {console.log('render')}
-      <Loader />
-    </LoaderWrapper>
-  ) : (
-    <div>
-      Profil
       <pre>
         <code>{JSON.stringify(userData, null, 4)}</code>
       </pre>
-    </div>
+    </StyledProfile>
   )
 }
 

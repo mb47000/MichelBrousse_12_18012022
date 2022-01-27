@@ -20,10 +20,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "docs": "jsdoc -c jsdoc.conf.json",
-<<<<<<< HEAD
-=======
-    "doc-build": "cross-env NODE_ENV=development parcel build docs\\entry.js --dist-dir docs\\build",
->>>>>>> master
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

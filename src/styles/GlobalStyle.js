@@ -1,10 +1,15 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
+
 * {
 	box-sizing: border-box;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
+}
+
+html {
+	font-size: 1rem;
 }
 
 #root {
@@ -16,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
 
 main {
 	flex-grow: 1;
-	margin: 91px 0 0 117px;
+	margin: 5.6875rem 0 0 7.3125rem;
 }
 `
 
