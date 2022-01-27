@@ -7,3 +7,7 @@ export const StyledProfile = styled.div`
     padding: 1.5rem 2rem;
   }
 `
+export const StyledInfoContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
