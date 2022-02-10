@@ -22,8 +22,16 @@ export const StyledCard = styled.div`
   border-radius: 5px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
 
-  @media (max-width: 1340px) {
-    padding: 1.75rem 1.25rem;
+  @media (max-width: 1300px) {
+    flex-direction: column;
+    width: 100%;
+    padding: 0.7rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 1160px) {
+    width: 18%;
   }
 `
 
@@ -32,6 +40,9 @@ export const StyledIcon = styled.div`
   background-size: cover;
   height: 60px;
   width: 60px;
+  @media (max-width: 1300px) {
+    margin: auto;
+  }
 `
 export const StyledCardData = styled.div`
   display: flex;
@@ -39,8 +50,10 @@ export const StyledCardData = styled.div`
   justify-content: center;
   padding: 0 0 0 1.5rem;
 
-  @media (max-width: 1340px) {
-    padding: 0 0 0 1rem;
+  @media (max-width: 1300px) {
+    padding: 0;
+    padding-top: 0.5rem;
+    text-align: center;
   }
 `
 export const StyledCardType = styled.div`

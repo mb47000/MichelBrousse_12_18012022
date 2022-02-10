@@ -3,10 +3,9 @@ import { StyledProfile, StyledInfoContainer } from './style'
 import HelloUser from '../../components/HelloUser'
 import ChartsGroup from '../../components/ChartsGroup'
 import CardsGroup from '../../components/CardsGroup'
-import { Loader, LoaderWrapper } from '../../styles'
+import Loader from '../../components/Loader'
 
 const Profil = () => {
-  console.log('render')
   const {
     data: userData,
     isLoading: userLoading,
@@ -18,21 +17,23 @@ const Profil = () => {
       {userError ? (
         <div>Erreur pendant la récuperation des données</div>
       ) : userLoading ? (
-        <LoaderWrapper>
-          <Loader />
-        </LoaderWrapper>
+        <Loader />
       ) : (
         <HelloUser userFirstName={userData.data.userInfos.firstName} />
       )}
 
       <StyledInfoContainer>
-        <ChartsGroup />
+        {userError ? (
+          <div>Erreur pendant la récuperation des données</div>
+        ) : userLoading ? (
+          <Loader />
+        ) : (
+          <ChartsGroup
+            score={userData.data.todayScore ?? userData.data.score}
+          />
+        )}
         <CardsGroup />
       </StyledInfoContainer>
-
-      <pre>
-        <code>{JSON.stringify(userData, null, 4)}</code>
-      </pre>
     </StyledProfile>
   )
 }

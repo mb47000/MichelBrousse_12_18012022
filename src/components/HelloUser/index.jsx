@@ -1,5 +1,5 @@
 import { Hello, FirstName, Message } from './style.js'
-
+import PropTypes from 'prop-types'
 import { Fragment } from 'react'
 
 /**
@@ -18,6 +18,10 @@ function HelloUser({ userFirstName }) {
       </Message>
     </Fragment>
   )
+}
+
+HelloUser.propTypes = {
+  userFirstName: PropTypes.string.isRequired,
 }
 
 export default HelloUser

@@ -10,7 +10,7 @@ const rotate = keyframes`
   }
 `
 
-export const Loader = styled.div`
+export const Spinner = styled.div`
   padding: 10px;
   border: 6px solid ${colors.primary};
   border-bottom-color: transparent;

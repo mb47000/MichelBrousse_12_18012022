@@ -2,15 +2,16 @@ import { Fragment } from 'react'
 import { StyledCardsGroup } from './style'
 import { useFetchApi } from '../../utils/hooks'
 import Card from '../Card'
-import { Loader, LoaderWrapper } from '../../styles'
+import Loader from '../Loader'
 
 const CardsGroups = () => {
   const { data, isLoading, error } = useFetchApi('') // key-data should be the endpoint parameter for useFetchApi - Wait backend team
   let formatData = data.data?.keyData // Can be remove when /key-data endpoint exist and replace by data
 
   /**
+   * Converts the number of calories into the right format.
    * @param {number} value
-   * @returns {string}
+   * @returns {number} value
    */
   const formatKcal = (value) => {
     value = value.toString()
@@ -27,9 +28,7 @@ const CardsGroups = () => {
       {error ? (
         <div>Erreur pendant la récuperation des données</div>
       ) : isLoading ? (
-        <LoaderWrapper>
-          <Loader />
-        </LoaderWrapper>
+        <Loader />
       ) : (
         <Fragment>
           <Card
