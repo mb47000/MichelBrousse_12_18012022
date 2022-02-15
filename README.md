@@ -14,4 +14,4 @@
 
 ## Try different User data
 
-![Alt Text](https://www.andromede.pics/10531ab0-8e37-11/pic.jpg)
+![Alt Text](https://www.andromede.pics/10531ab0-8e37-11/pic.gif)
