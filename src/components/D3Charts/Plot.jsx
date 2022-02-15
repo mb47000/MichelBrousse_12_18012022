@@ -2,6 +2,11 @@ import * as d3 from 'd3'
 import { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 
+/**
+ * Plot component
+ * @author Michel Brousse
+ * @component
+ */
 const Plot = ({ activityData }) => {
   /**
    * Create an array of numbers from 1 to the length of the data array
@@ -16,11 +21,9 @@ const Plot = ({ activityData }) => {
   }
 
   const svgRef = useRef(null)
-  const dimensions = {
-    width: 835,
-    height: 320,
-  }
-  const { width, height } = dimensions
+
+  const width = 835
+  const height = 320
 
   const graphWidth = 702
   const graphHeight = 143
@@ -61,6 +64,7 @@ const Plot = ({ activityData }) => {
 
     svg.selectAll('*').remove() // Clear svg content before adding new elements
 
+    // Add title and legend
     svg
       .append('circle')
       .attr('cx', 532)
@@ -98,11 +102,13 @@ const Plot = ({ activityData }) => {
       .attr('alignment-baseline', 'middle')
       .style('fill', '#20253A')
 
+    // Position the graph
     const svgEl = d3
       .select(svgRef.current)
       .append('g')
       .attr('transform', `translate(43, 112.5)`)
 
+    // Customize Ticks (x,y)
     svgEl
       .append('g')
       .classed('ticks-xgroup', true)
@@ -135,6 +141,7 @@ const Plot = ({ activityData }) => {
 
     svgEl.select('.ticks-ygroup .domain').remove()
 
+    // Draw plot bar by group kg/kcal
     svgEl
       .append('g')
       .attr('id', 'graph')
@@ -171,6 +178,7 @@ const Plot = ({ activityData }) => {
 
     const graph = svgEl.select('#graph')
 
+    // Add background and tooltip elements for hover event
     graph
       .selectAll('hover')
       .data(activityData)
@@ -234,6 +242,7 @@ const Plot = ({ activityData }) => {
       .text((d) => d.calories + 'Kcal')
       .attr('fill-opacity', 0)
 
+    // Add event on mouseover and mouseout, show/hide (with opacity attr) tooltip and background color for current group
     svg
       .selectAll('rect')
       .on('mouseover', function (e, d) {

@@ -2,6 +2,11 @@ import * as d3 from 'd3'
 import { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 
+/**
+ * Spider component
+ * @author Michel Brousse
+ * @component
+ */
 const Spider = ({ perfs }) => {
   const svgRef = useRef(null)
   const width = 258

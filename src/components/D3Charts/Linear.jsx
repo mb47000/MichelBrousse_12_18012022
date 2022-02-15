@@ -2,6 +2,11 @@ import * as d3 from 'd3'
 import { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 
+/**
+ * Linear component
+ * @author Michel Brousse
+ * @component
+ */
 const Linear = ({ sessionsData }) => {
   const svgRef = useRef(null)
 
