@@ -1,4 +1,5 @@
 import { useFetchApi } from '../../utils/hooks'
+import { userDataModel } from '../../utils/models'
 import { StyledProfile, StyledInfoContainer } from './style'
 import HelloUser from '../../components/HelloUser'
 import ChartsGroup from '../../components/ChartsGroup'
@@ -11,7 +12,6 @@ const Profil = () => {
     isLoading: userLoading,
     error: userError,
   } = useFetchApi()
-
   return (
     <StyledProfile>
       {userError ? (
@@ -19,7 +19,9 @@ const Profil = () => {
       ) : userLoading ? (
         <Loader />
       ) : (
-        <HelloUser userFirstName={userData.data.userInfos.firstName} />
+        <HelloUser
+          userFirstName={userDataModel(userData.data).userInfos.firstName}
+        />
       )}
 
       <StyledInfoContainer>
@@ -28,9 +30,7 @@ const Profil = () => {
         ) : userLoading ? (
           <Loader />
         ) : (
-          <ChartsGroup
-            score={userData.data.todayScore ?? userData.data.score}
-          />
+          <ChartsGroup score={userDataModel(userData.data).todayScore} />
         )}
         <CardsGroup />
       </StyledInfoContainer>

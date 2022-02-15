@@ -3,6 +3,11 @@ import { StyledChartsGroup } from './style'
 import { Plot, Linear, Spider, Radial } from '../D3Charts'
 import PropTypes from 'prop-types'
 import { useFetchApi } from '../../utils/hooks'
+import {
+  activityDataModel,
+  perfsDataModel,
+  sessionsDataModel,
+} from '../../utils/models'
 import Loader from '../Loader'
 
 const ChartsGroups = ({ score }) => {
@@ -37,7 +42,7 @@ const ChartsGroups = ({ score }) => {
       ) : activityLoading ? (
         <Loader />
       ) : (
-        <Plot activityData={activityData.data.sessions} />
+        <Plot activityData={activityDataModel(activityData.data).sessions} />
       )}
 
       {sessionsError ? (
@@ -45,7 +50,7 @@ const ChartsGroups = ({ score }) => {
       ) : sessionsLoading ? (
         <Loader />
       ) : (
-        <Linear sessionsData={sessionsData.data.sessions} />
+        <Linear sessionsData={sessionsDataModel(sessionsData.data).sessions} />
       )}
 
       {perfsError ? (
@@ -53,7 +58,7 @@ const ChartsGroups = ({ score }) => {
       ) : perfsLoading ? (
         <Loader />
       ) : (
-        <Spider perfs={perfsData.data.data} />
+        <Spider perfs={perfsDataModel(perfsData.data).data} />
       )}
 
       <Radial score={score} />

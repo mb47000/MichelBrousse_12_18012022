@@ -1,12 +1,12 @@
 import { Fragment } from 'react'
 import { StyledCardsGroup } from './style'
 import { useFetchApi } from '../../utils/hooks'
+import { userDataModel } from '../../utils/models'
 import Card from '../Card'
 import Loader from '../Loader'
 
 const CardsGroups = () => {
   const { data, isLoading, error } = useFetchApi('') // key-data should be the endpoint parameter for useFetchApi - Wait backend team
-  let formatData = data.data?.keyData // Can be remove when /key-data endpoint exist and replace by data
 
   /**
    * Converts the number of calories into the right format.
@@ -33,22 +33,22 @@ const CardsGroups = () => {
         <Fragment>
           <Card
             type={'Calories'}
-            value={formatKcal(formatData.calorieCount)}
+            value={formatKcal(userDataModel(data.data).keyData.calorieCount)}
             unit={'kCal'}
           ></Card>
           <Card
             type={'Protéines'}
-            value={formatData.proteinCount}
+            value={userDataModel(data.data).keyData.proteinCount}
             unit={'g'}
           ></Card>
           <Card
             type={'Glucides'}
-            value={formatData.carbohydrateCount}
+            value={userDataModel(data.data).keyData.carbohydrateCount}
             unit={'g'}
           ></Card>
           <Card
             type={'Lipides'}
-            value={formatData.lipidCount}
+            value={userDataModel(data.data).keyData.lipidCount}
             unit={'g'}
           ></Card>
         </Fragment>
