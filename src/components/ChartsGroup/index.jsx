@@ -10,6 +10,12 @@ import {
 } from '../../utils/models'
 import Loader from '../Loader'
 
+/**
+ * ChartsGroups component
+ * @component
+ * @param {number} {score}
+ * @returns {component}
+ */
 const ChartsGroups = ({ score }) => {
   const {
     data: perfsData,

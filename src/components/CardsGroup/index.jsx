@@ -5,14 +5,14 @@ import { userDataModel } from '../../utils/models'
 import Card from '../Card'
 import Loader from '../Loader'
 
+/**
+ * CardGroups Component
+ * @component
+ * @returns {component}
+ */
 const CardsGroups = () => {
   const { data, isLoading, error } = useFetchApi('') // key-data should be the endpoint parameter for useFetchApi - Wait backend team
 
-  /**
-   * Converts the number of calories into the right format.
-   * @param {number} value
-   * @returns {number} value
-   */
   const formatKcal = (value) => {
     value = value.toString()
 
